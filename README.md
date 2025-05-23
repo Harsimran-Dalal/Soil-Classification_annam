@@ -91,7 +91,7 @@ cd Soil-Classification_annam</code></pre>
 <h2>👨‍💻 Author</h2>
 <p><strong>Harsimran Singh Dalal</strong><br/>
 2nd Year BTech, Electronics and Computer Engineering<br/>
-<em>Passionate about ML/DL, IoT, and solving real-world problems.</em></p>
+</p>
 
 <h2>📬 Contact</h2>
 <ul>
