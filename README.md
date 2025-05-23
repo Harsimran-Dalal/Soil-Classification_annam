@@ -44,12 +44,12 @@
 <h3>▶️ Run Pipeline</h3>
 <ol>
   <li>Clone the repo:
-    <pre><code>git clone https://github.com/&lt;your-username&gt;/soil-classification-cnn-rf.git
-cd soil-classification-cnn-rf</code></pre>
+    <pre><code>git clone https://github.com/&lt;Harsimran-Dalal&gt;/Soil_Classification_annam.git
+cd Soil-Classification_annam</code></pre>
   </li>
   <li>Place the <code>soil_classification-2025</code> folder in the project root.</li>
   <li>Run the script:
-    <pre><code>python classify_soil.py</code></pre>
+    <pre><code>python soil_classification.py</code></pre>
   </li>
 </ol>
 
@@ -78,8 +78,7 @@ cd soil-classification-cnn-rf</code></pre>
 
 <h2>📌 Notes</h2>
 <ul>
-  <li>ResNet weights loaded manually due to Kaggle offline limitations</li>
-  <li>Can be extended to use SVM, XGBoost, etc. for classification</li>
+  <li>ResNet weights loaded manually </li>
   <li>End-to-end CNN fine-tuning can be explored for large datasets</li>
 </ul>
 
