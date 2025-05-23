@@ -49,7 +49,7 @@ cd Soil-Classification_annam</code></pre>
   </li>
   <li>Place the <code>soil_classification-2025</code> folder in the project root.</li>
   <li>Run the script:
-    <pre><code>python soil_classification.ipynb</code></pre>
+    <pre><code>python training.ipynb</code></pre>
   </li>
 </ol>
 
