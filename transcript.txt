@@ -1,17 +1,21 @@
-Hello, and welcome to the demo of my soil classification project.
+Team Name
+Dirt Detectives
 
-This project is designed to classify images of soil into four categories: Alluvial Soil, Black Soil, Clay Soil, and Red Soil. The primary goal is to use image data and machine learning techniques to predict the soil type based on visual features.
+Team Members Name
+Harsimran Singh Dalal
 
-The dataset consists of training images with known soil types and a test set with unknown labels. The training labels are provided in a CSV file, and test image IDs are given separately.
+Approach of Solving the Problem
+I used a hybrid pipeline that combines deep learning and traditional machine learning techniques. The key idea was to use a pre-trained ResNet18 model from PyTorch as a fixed feature extractor by removing its final classification layer. The output from this CNN model was high-level feature vectors for each image. These features were then used to train a Random Forest classifier. I applied 5-fold stratified cross-validation to ensure robustness and evaluated model performance using the macro F1-score. After validating performance, I retrained the model on the entire training set to generate final predictions.
 
-To extract meaningful information from the images, I used a pre-trained ResNet18 convolutional neural network from PyTorch. However, I removed the final fully connected layer to use the model purely as a feature extractor. Each image was resized to 224x224 pixels and passed through ResNet18 to generate a fixed-length feature vector.
+Challenges Faced
+1. The test images were not publicly available during development, which made it harder to validate generalization.
+2. Extracting features for over 1,000 high-resolution images using ResNet18 was computationally expensive and time-consuming.
+3. Balancing between CNN feature extraction and traditional ML pipeline tuning without a validation leaderboard.
 
-Once features were extracted for all training images, I used a traditional machine learning model—specifically, a Random Forest classifier—for the classification task. I chose this hybrid approach to combine the feature extraction power of deep learning with the interpretability and robustness of classical machine learning.
+How Did You Overcome the Challenge?
+1. To ensure generalization despite the lack of test data, I relied on robust cross-validation using StratifiedKFold.
+2. I optimized the feature extraction loop using batch processing and efficient data loaders.
+3. Multiple experiments were conducted with different random seeds and hyperparameters to validate consistency and avoid overfitting.
 
-I performed 5-fold stratified cross-validation to evaluate model performance and got an average macro F1 score of about 0.955, which indicates strong and balanced performance across all soil types.
-
-Finally, I trained the model on the entire training set and generated predictions for the test set. The predicted labels were then converted back to their original soil names using label encoding, and a submission CSV was created.
-
-The final output includes this submission file with predicted soil types for each test image.
-
-Thank you for watching this demo!
+Final Observation and Leaderboard Score
+The hybrid approach proved effective. The model achieved an average macro F1-score of 0.955 across cross-validation folds, indicating high and balanced performance across all soil types. Final predictions were submitted successfully using a well-formatted CSV file.
