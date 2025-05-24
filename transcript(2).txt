@@ -1,0 +1,18 @@
+Team Name
+Dirt Detectives
+
+Team Members Name
+Harsimran Singh Dalal
+
+Approach of Solving the Problem
+My approach involved combining deep learning with traditional machine learning techniques. I used a pretrained ResNet18 model as a fixed feature extractor by removing its final classification layer. This allowed me to convert each image into a 512-dimensional feature vector. To reduce dimensionality and retain essential information, I applied Principal Component Analysis (PCA), keeping the top 100 components. These processed features were then used to train a Random Forest classifier to predict soil types. I evaluated the model using class-wise F1 scores and used it to generate predictions for the test set.
+
+Challenges Faced
+One of the major challenges I faced was dealing with high-dimensional feature vectors, which could lead to overfitting and slower training. Another issue was ensuring that the train-validation split was balanced across all classes to give a fair evaluation.
+
+How Did You Overcome the Challenge?
+To tackle the high dimensionality, I used PCA to compress the features, which not only sped up training but also reduced the risk of overfitting. For splitting the dataset, I used stratified sampling to make sure that the class distribution remained consistent between training and validation sets. Additionally, by using a pretrained model, I was able to avoid training a CNN from scratch, saving both time and computational resources.
+
+Final Observation and Leaderboard Score
+This approach turned out to be quite effective. I observed good generalization with balanced F1 scores across most classes. The use of deep features combined with a classical model like Random Forest provided a strong baseline. On the public leaderboard, my best submission achieved an F1 score of 0.5241. This experience reaffirmed that hybrid approaches can be both efficient and powerful, especially when working within resource constraints.
+
